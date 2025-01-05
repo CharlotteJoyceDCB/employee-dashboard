@@ -6,7 +6,7 @@ const EmployeeCard = ({ employee }) => {
       <h3>{employee.name}</h3>
       <p>Position: {employee.position}</p>
       <p>Address: {employee.address}</p>
-      <p>Birthdate (yyyy/mm/dd): {employee.birthdate}</p>
+      <p>Birthdate: {employee.birthdate}</p>
       <p>Age: {employee.age}</p>
     </div>
   );

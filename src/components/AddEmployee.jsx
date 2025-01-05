@@ -38,7 +38,7 @@ const AddEmployee = ({ onAdd }) => {
             type="text"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            placeholder="Enter employee name"
+            placeholder="ex. Juan Dela Cruz"
             required
           />
         </div>
@@ -48,7 +48,7 @@ const AddEmployee = ({ onAdd }) => {
             type="text"
             value={position}
             onChange={(e) => setPosition(e.target.value)}
-            placeholder="Enter employee position"
+            placeholder="ex. Software Engineer"
             required
           />
         </div>
@@ -58,7 +58,7 @@ const AddEmployee = ({ onAdd }) => {
             type="text"
             value={address}
             onChange={(e) => setAddress(e.target.value)}
-            placeholder="Enter employee address"
+            placeholder="City, Province"
             required
           />
         </div>
@@ -69,7 +69,6 @@ const AddEmployee = ({ onAdd }) => {
             value={birthdate}
             onChange={(e) => {
                 setBirthdate(e.target.value);
-                calculateAge(e.target.value);
               }}
               onKeyDown={(e) => e.preventDefault()}
             required
@@ -81,7 +80,7 @@ const AddEmployee = ({ onAdd }) => {
             type="number"
             value={age}
             onChange={(e) => setAge(e.target.value)}
-            placeholder="Enter employee age"
+            placeholder="Age"
             required
           />
         </div>

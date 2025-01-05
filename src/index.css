@@ -4,7 +4,6 @@ body {
   padding: 0;
   background-color: #f4f4f4;
 }
-
 h1 {
   text-align: center;
   color: #333;
@@ -98,6 +97,9 @@ h1 {
 }
 .add-employee button:hover {
   background-color: #0056b3;
+}
+form input:focus {
+  outline: none;
 }
 /* EDIT EMPLOYEE */
 .edit-employee {
