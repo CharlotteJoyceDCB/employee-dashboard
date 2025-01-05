@@ -9,7 +9,7 @@ const AddEmployee = ({ onAdd }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
+
     if (name.trim() && position.trim() && address.trim() && birthdate.trim() && age) {
       const newEmployee = {
         id: Date.now(),
@@ -67,8 +67,11 @@ const AddEmployee = ({ onAdd }) => {
           <input
             type="date"
             value={birthdate}
-            onChange={(e) => setBirthdate(e.target.value)}
-            placeholder="Enter employee birthdate"
+            onChange={(e) => {
+                setBirthdate(e.target.value);
+                calculateAge(e.target.value);
+              }}
+              onKeyDown={(e) => e.preventDefault()}
             required
           />
         </div>
@@ -79,6 +82,7 @@ const AddEmployee = ({ onAdd }) => {
             value={age}
             onChange={(e) => setAge(e.target.value)}
             placeholder="Enter employee age"
+            required
           />
         </div>
         <button type="submit">Add Employee</button>
