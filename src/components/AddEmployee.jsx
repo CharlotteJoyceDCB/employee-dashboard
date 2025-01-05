@@ -9,7 +9,8 @@ const AddEmployee = ({ onAdd }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (name.trim() && position.trim()) {
+    
+    if (name.trim() && position.trim() && address.trim() && birthdate.trim() && age) {
       const newEmployee = {
         id: Date.now(),
         name,
