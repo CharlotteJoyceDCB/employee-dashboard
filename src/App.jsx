@@ -44,6 +44,12 @@ const App = () => {
     setEditingEmployee(null);
   };
 
+  const handleDeleteEmployee = (id) => {
+    setEmployees((prevEmployees) =>
+      prevEmployees.filter((employee) => employee.id !== id)
+    );
+  };
+
   return (
     <div className="app">
       <h1>Employee Management Dashboard</h1>
@@ -59,6 +65,7 @@ const App = () => {
       <EmployeeList
         employees={employees}
         onEdit={handleEditEmployee}
+        onDelete={handleDeleteEmployee}
       />
     </div>
   );
