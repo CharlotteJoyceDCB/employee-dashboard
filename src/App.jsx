@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import EmployeeList from './components/EmployeeList';
 import AddEmployee from './components/AddEmployee';
+import EditEmployee from './components/EditEmployee';
 
 const App = () => {
   const [employees, setEmployees] = useState([
@@ -20,15 +21,45 @@ const App = () => {
     },
   ]);
 
+  const [editingEmployee, setEditingEmployee] = useState(null);
+
+  const handleEditEmployee = (employee) => {
+    setEditingEmployee(employee);
+  };
+
   const handleAddEmployee = (newEmployee) => {
     setEmployees((prevEmployees) => [...prevEmployees, newEmployee]);
   };
 
+  const handleUpdateEmployee = (updatedEmployee) => {
+    setEmployees((prevEmployees) =>
+      prevEmployees.map((emp) =>
+        emp.id === updatedEmployee.id ? updatedEmployee : emp
+      )
+    );
+    setEditingEmployee(null);
+  };
+
+  const handleCancelEdit = () => {
+    setEditingEmployee(null);
+  };
+
   return (
     <div className="app">
-      <h1>Welcome to Employee Management Dashboard</h1>
-      <EmployeeList employees={employees}/>
-      <AddEmployee onAdd={handleAddEmployee} />
+      <h1>Employee Management Dashboard</h1>
+      {editingEmployee ? (
+        <EditEmployee
+          employee={editingEmployee}
+          onUpdate={handleUpdateEmployee}
+          onCancel={handleCancelEdit}
+        />
+      ) : (
+        <AddEmployee onAdd={handleAddEmployee} />
+      )}
+      <EmployeeList
+        employees={employees}
+        onEdit={handleEditEmployee}
+      />
     </div>
   );
 };
