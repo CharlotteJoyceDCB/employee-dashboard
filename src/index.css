@@ -63,6 +63,21 @@ h1 {
   margin: 0;
   color: #666;
 }
+/* GRID LAYOUT */
+.employee-list {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.employee-list h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+.employee-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
 /* ADD EMPLOYEE */
 .add-employee {
   background-color: #f9f9f9;

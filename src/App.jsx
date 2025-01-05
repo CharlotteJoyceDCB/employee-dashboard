@@ -6,18 +6,25 @@ import EditEmployee from './components/Editemployee';
 const App = () => {
   const [employees, setEmployees] = useState([
     { id: 1,
+      name: 'Juan Dela Cruz',
+      position: 'Backend Developer',
+      address: 'Quezon City, Manila',
+      birthdate: '1998/09/23',
+      age: '26'
+    },
+    { id: 2,
       name: 'John Doe',
       position: 'Software Engineer',
       address: 'Tondo, Manila',
       birthdate: '2000/01/01',
       age: '25'
     },
-    { id: 2,
-      name: 'Juan Dela Cruz',
-      position: 'Backend Developer',
-      address: 'Quezon City, Manila',
-      birthdate: '1998/09/23',
-      age: '26'
+    { id: 3,
+      name: 'Jane Smith',
+      position: 'UI Designer',
+      address: 'Cebu City, Cebu',
+      birthdate: '1996/09/23',
+      age: '30'
     },
   ]);
 
