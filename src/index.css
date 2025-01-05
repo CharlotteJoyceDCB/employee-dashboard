@@ -41,3 +41,25 @@ h1 {
 .employee-list li:hover {
   background-color: #f0f0f0;
 }
+/* EMPLOYEE CARD */
+.employee-card {
+  padding: 16px;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.employee-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.employee-card h3 {
+  margin: 0 0 8px;
+  color: #333;
+}
+.employee-card p {
+  margin: 0;
+  color: #666;
+}

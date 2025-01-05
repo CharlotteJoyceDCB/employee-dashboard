@@ -1,17 +1,13 @@
 import React from 'react';
-
+import EmployeeCard from './EmployeeCard';
 
 const EmployeeList = ({ employees }) => {
   return (
     <div className="employee-list">
       <h2>Employee List</h2>
-      <ul>
-        {employees.map((employee) => (
-          <li key={employee.id}>
-            {employee.name} - {employee.position}
-          </li>
-        ))}
-      </ul>
+      {employees.map((employee) => (
+        <EmployeeCard key={employee.id} employee={employee} />
+      ))}
     </div>
   );
 };
