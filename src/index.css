@@ -43,6 +43,7 @@ h1 {
 }
 /* EMPLOYEE CARD */
 .employee-card {
+  justify-content: space-between;
   padding: 16px;
   background-color: #ffffff;
   border: 1px solid #ddd;

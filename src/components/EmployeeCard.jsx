@@ -5,6 +5,9 @@ const EmployeeCard = ({ employee }) => {
     <div className="employee-card">
       <h3>{employee.name}</h3>
       <p>Position: {employee.position}</p>
+      <p>Address: {employee.address}</p>
+      <p>Birthday: {employee.birthday}</p>
+      <p>Age: {employee.age}</p>
     </div>
   );
 };
