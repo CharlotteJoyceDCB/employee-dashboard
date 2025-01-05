@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import EmployeeList from './components/EmployeeList';
 import AddEmployee from './components/AddEmployee';
-import EditEmployee from './components/EditEmployee';
+import EditEmployee from './components/EditEmployees';
 
 const App = () => {
   const [employees, setEmployees] = useState([
