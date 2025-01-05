@@ -142,15 +142,30 @@ form input:focus {
 .edit-employee .cancel-btn:hover {
   background-color: #666;
 }
-.edit-btn {
-  color: #fff;
-  background-color: #007bff;
-  border: none;
-  border-radius: 2px;
-  padding: 5px 10px;
-  margin-bottom: 10px;
-  cursor: pointer;
+.employee-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
 }
-.edit-btn:hover {
-  background-color: #006ee4;
+.employee-actions button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-bottom: 10px;
+}
+.employee-actions button:first-child {
+  background-color: #007bff;
+  color: white;
+}
+.employee-actions button:first-child:hover {
+  background-color: #0056b3;
+}
+.employee-actions button:last-child {
+  background-color: #dc3545;
+  color: white;
+}
+.employee-actions button:last-child:hover {
+  background-color: #a71d2a;
 }
