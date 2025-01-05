@@ -8,7 +8,7 @@ const EmployeeList = ({ employees , onEdit}) => {
       {employees.map((employee) => (
         <div key={employee.id}>
             <EmployeeCard employee={employee} />
-            <button onClick={() => onEdit(employee)}>Edit</button>
+            <button className='edit-btn' onClick={() => onEdit(employee)}>Edit</button>
         </div>
       ))}
     </div>

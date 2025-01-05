@@ -65,7 +65,6 @@ h1 {
   color: #666;
 }
 /* ADD EMPLOYEE */
-/* src/components/AddEmployee.css */
 .add-employee {
   background-color: #f9f9f9;
   border-radius: 8px;
@@ -73,25 +72,21 @@ h1 {
   padding: 20px;
   margin: 20px 0;
 }
-
 .add-employee h2 {
   margin-bottom: 16px;
   color: #333;
 }
-
 .add-employee form {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
-
 .add-employee input {
   padding: 8px;
   border: 1px solid #ddd;
   border-radius: 4px;
   width: 100%;
 }
-
 .add-employee button {
   padding: 10px 15px;
   background-color: #007bff;
@@ -101,7 +96,59 @@ h1 {
   cursor: pointer;
   transition: background-color 0.3s;
 }
-
 .add-employee button:hover {
   background-color: #0056b3;
+}
+/* EDIT EMPLOYEE */
+.edit-employee {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 20px 0;
+}
+.edit-employee h2 {
+  margin-bottom: 16px;
+  color: #333;
+}
+.edit-employee form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.edit-employee input {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 100%;
+}
+.edit-employee button {
+  padding: 10px 15px;
+  background-color: #00b330;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.edit-employee button[type="button"] {
+  background-color: #919191;
+}
+.edit-employee button:hover {
+  background-color: #019d2a;
+}
+.edit-employee .cancel-btn:hover {
+  background-color: #666;
+}
+.edit-btn {
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 2px;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.edit-btn:hover {
+  background-color: #006ee4;
 }
