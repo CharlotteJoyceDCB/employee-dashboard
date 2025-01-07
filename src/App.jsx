@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import EmployeeList from './components/EmployeeList';
 import AddEmployee from './components/AddEmployee';
 import EditEmployee from './components/Editemployee';
+import DashboardSummary from "./components/DashboardSummary";
 
 const App = () => {
   const [employees, setEmployees] = useState([
@@ -60,6 +61,7 @@ const App = () => {
   return (
     <div className="app">
       <h1>Employee Management Dashboard</h1>
+      <DashboardSummary />
       {editingEmployee ? (
         <EditEmployee
           employee={editingEmployee}
