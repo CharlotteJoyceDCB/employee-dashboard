@@ -1,5 +1,6 @@
 import React from "react";
 import { Users, Home, Briefcase } from "react-feather";
+import "../styles/DashboardSummary.css";
 
 const DashboardSummary = () => {
     const stats = [
