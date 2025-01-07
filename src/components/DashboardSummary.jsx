@@ -2,22 +2,26 @@ import React from "react";
 import { Users, Home, Briefcase } from "react-feather";
 import "../styles/DashboardSummary.css";
 
-const DashboardSummary = () => {
+const DashboardSummary = ({ employees }) => {
+    const totalEmployees = employees.length;
+    const uniqueDepartments = new Set(employees.map((emp) => emp.position)).size;
+    const uniquePositions = new Set(employees.map((emp) => emp.position)).size;
+
     const stats = [
       { 
         icon: <Users />, 
         label: "Total Employees", 
-        count: 3 
+        count: totalEmployees
       },
       { 
         icon: <Home />, 
         label: "Departments", 
-        count: 3 
+        count: uniqueDepartments
       },
       { 
         icon: <Briefcase />, 
         label: "Positions", 
-        count: 3 
+        count: uniquePositions
       },
     ];
 
