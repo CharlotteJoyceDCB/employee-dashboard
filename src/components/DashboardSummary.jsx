@@ -25,11 +25,11 @@ const DashboardSummary = () => {
     <div className="dashboard-summary">
       {stats.map((stat, index) => (
         <div className="summary-card" key={index}>
-          <div className="icon">{stat.icon}</div>
-          <div className="details">
-            <h4>{stat.label}</h4>
-            <p>{stat.count}</p>
-          </div>
+        <div className="icon">{stat.icon}</div>
+            <div className="details">
+                <h4>{stat.label}</h4>
+                <p>{stat.count}</p>
+            </div>
         </div>
       ))}
     </div>

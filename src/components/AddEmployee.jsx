@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 const AddEmployee = ({ onAdd }) => {
-const [isFormVisible, setIsFormVisible] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [name, setName] = useState('');
   const [position, setPosition] = useState('');
   const [address, setAddress] = useState('');
@@ -21,79 +21,92 @@ const [isFormVisible, setIsFormVisible] = useState(false);
         age,
       };
       onAdd(newEmployee);
+
       setName('');
       setPosition('');
       setAddress('');
       setBirthdate('');
       setAge('');
+      setIsModalOpen(false);
     }
-  };
-
-  const toggleFormVisibility = () => {
-    setIsFormVisible(!isFormVisible);
   };
 
   return (
     <div className="add-employee">
-      <button className="toggle-form-btn" onClick={toggleFormVisibility}>
-        {isFormVisible ? 'Cancel' : 'Add Employee'}
-      </button>
+      <div className="header-bar">
+        <input
+          type="text"
+          className="search-bar"
+          placeholder="Search employees..."
+        />
+        <button className="add-employee-btn" onClick={() => setIsModalOpen(true)}>
+          + Add Employee
+        </button>
+      </div>
 
-      {isFormVisible && (
-        <form onSubmit={handleSubmit}>
-          <h2>Add Employee</h2>
-          <div>
-            <label>Name</label>
-            <input
-              type="text"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              placeholder="ex. Juan Dela Cruz"
-              required
-            />
+      {isModalOpen && (
+        <div className="modal-overlay">
+          <div className="modal-content">
+            <h2>Add Employee</h2>
+            <form onSubmit={handleSubmit}>
+              <div>
+                <label>Name</label>
+                <input
+                  type="text"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  placeholder="ex. Juan Dela Cruz"
+                  required
+                />
+              </div>
+              <div>
+                <label>Position</label>
+                <input
+                  type="text"
+                  value={position}
+                  onChange={(e) => setPosition(e.target.value)}
+                  placeholder="ex. Software Engineer"
+                  required
+                />
+              </div>
+              <div>
+                <label>Address</label>
+                <input
+                  type="text"
+                  value={address}
+                  onChange={(e) => setAddress(e.target.value)}
+                  placeholder="City, Province"
+                  required
+                />
+              </div>
+              <div>
+                <label>Birthdate</label>
+                <input
+                  type="date"
+                  value={birthdate}
+                  onChange={(e) => setBirthdate(e.target.value)}
+                  required
+                />
+              </div>
+              <div>
+                <label>Age</label>
+                <input
+                  type="number"
+                  value={age}
+                  onChange={(e) => setAge(e.target.value)}
+                  placeholder="Age"
+                  required
+                />
+              </div>
+              <div className="modal-actions">
+                <button type="button" onClick={() => setIsModalOpen(false)}>
+                  Cancel
+                </button>
+                <button type="submit">Add Employee</button>
+              </div>
+            </form>
           </div>
-          <div>
-            <label>Position</label>
-            <input
-              type="text"
-              value={position}
-              onChange={(e) => setPosition(e.target.value)}
-              placeholder="ex. Software Engineer"
-              required
-            />
-          </div>
-          <div>
-            <label>Address</label>
-            <input
-              type="text"
-              value={address}
-              onChange={(e) => setAddress(e.target.value)}
-              placeholder="City, Province"
-              required
-            />
-          </div>
-          <div>
-            <label>Birthdate</label>
-            <input
-              type="date"
-              value={birthdate}
-              onChange={(e) => setBirthdate(e.target.value)}
-              onKeyDown={(e) => e.preventDefault()}
-              required
-            />
-          </div>
-          <div>
-            <label>Age</label>
-            <input
-              type="number"
-              value={age}
-              onChange={(e) => setAge(e.target.value)}
-              placeholder="Age"
-              required
-            />
-          </div>
-          <button type="submit">Add Employee</button>
-        </form>
+        </div>
       )}
     </div>
   );
