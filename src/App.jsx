@@ -38,6 +38,7 @@ const App = () => {
 
   const handleAddEmployee = (newEmployee) => {
     setEmployees((prevEmployees) => [...prevEmployees, newEmployee]);
+    setFilteredEmployees((prevEmployees) => [...prevEmployees, newEmployee]);
   };
 
   const handleUpdateEmployee = (updatedEmployee) => {
