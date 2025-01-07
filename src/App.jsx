@@ -29,8 +29,8 @@ const App = () => {
     },
   ]);
 
-  const [editingEmployee, setEditingEmployee] = useState(null);
   const [filteredEmployees, setFilteredEmployees] = useState(employees);
+  const [editingEmployee, setEditingEmployee] = useState(null);
 
   const handleEditEmployee = (employee) => {
     setEditingEmployee(employee);
@@ -46,6 +46,11 @@ const App = () => {
         emp.id === updatedEmployee.id ? updatedEmployee : emp
       )
     );
+    setFilteredEmployees((prevEmployees) =>
+      prevEmployees.map((emp) =>
+        emp.id === updatedEmployee.id ? updatedEmployee : emp
+      )
+    );
     setEditingEmployee(null);
   };
 
@@ -57,23 +62,32 @@ const App = () => {
     setEmployees((prevEmployees) =>
       prevEmployees.filter((employee) => employee.id !== id)
     );
+    setFilteredEmployees((prevEmployees) =>
+      prevEmployees.filter((employee) => employee.id !== id)
+    );
   };
 
   return (
     <div className="app">
       <h1>Employee Management Dashboard</h1>
       <DashboardSummary employees={employees} />
+
+      <AddEmployee
+        employees={employees}
+        setFilteredEmployees={setFilteredEmployees}
+        onAdd={handleAddEmployee}
+      />
+
       {editingEmployee ? (
         <EditEmployee
           employee={editingEmployee}
           onUpdate={handleUpdateEmployee}
           onCancel={handleCancelEdit}
         />
-      ) : (
-        <AddEmployee onAdd={handleAddEmployee} />
-      )}
+      ) : null}
+
       <EmployeeList
-        employees={employees}
+        employees={filteredEmployees}
         onEdit={handleEditEmployee}
         onDelete={handleDeleteEmployee}
       />

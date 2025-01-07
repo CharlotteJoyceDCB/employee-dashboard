@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const AddEmployee = ({ onAdd }) => {
+const AddEmployee = ({ employees, setFilteredEmployees, onAdd }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [name, setName] = useState('');
   const [position, setPosition] = useState('');
