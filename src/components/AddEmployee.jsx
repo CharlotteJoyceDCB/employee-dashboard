@@ -8,6 +8,18 @@ const AddEmployee = ({ onAdd }) => {
   const [birthdate, setBirthdate] = useState('');
   const [age, setAge] = useState('');
 
+  const handleSearch = (e) => {
+    const query = e.target.value.trim();
+    if (query === "") {
+      setFilteredEmployees(employees);
+    } else {
+      const filtered = employees.filter((employee) =>
+        employee.id.toString().includes(query)
+      );
+      setFilteredEmployees(filtered);
+    }
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -38,6 +50,7 @@ const AddEmployee = ({ onAdd }) => {
           type="text"
           className="search-bar"
           placeholder="Search employees..."
+          onChange={handleSearch}
         />
         <button className="add-employee-btn" onClick={() => setIsModalOpen(true)}>
           + Add Employee

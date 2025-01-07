@@ -30,6 +30,7 @@ const App = () => {
   ]);
 
   const [editingEmployee, setEditingEmployee] = useState(null);
+  const [filteredEmployees, setFilteredEmployees] = useState(employees);
 
   const handleEditEmployee = (employee) => {
     setEditingEmployee(employee);
