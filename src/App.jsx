@@ -68,15 +68,25 @@ const App = () => {
     );
   };
 
+  const handleSearch = (query) => {
+    if (query.trim() === "") {
+      setFilteredEmployees(employees);
+    } else {
+      const filtered = employees.filter((employee) =>
+        employee.name.toLowerCase().includes(query.toLowerCase())
+      );
+      setFilteredEmployees(filtered);
+    }
+  };
+
   return (
     <div className="app">
       <h1>Employee Management Dashboard</h1>
       <DashboardSummary employees={employees} />
 
       <AddEmployee
-        employees={employees}
-        setFilteredEmployees={setFilteredEmployees}
         onAdd={handleAddEmployee}
+        onSearch={handleSearch}
       />
 
       {editingEmployee ? (

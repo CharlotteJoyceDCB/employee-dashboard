@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const AddEmployee = ({ employees, setFilteredEmployees, onAdd }) => {
+const AddEmployee = ({ onAdd, onSearch }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [name, setName] = useState('');
   const [position, setPosition] = useState('');
@@ -8,17 +8,17 @@ const AddEmployee = ({ employees, setFilteredEmployees, onAdd }) => {
   const [birthdate, setBirthdate] = useState('');
   const [age, setAge] = useState('');
 
-  const handleSearch = (e) => {
-    const query = e.target.value.trim();
-    if (query === "") {
-      setFilteredEmployees(employees);
-    } else {
-      const filtered = employees.filter((employee) =>
-        employee.id.toString().includes(query)
-      );
-      setFilteredEmployees(filtered);
-    }
-  };
+  // const handleSearch = (e) => {
+  //   const query = e.target.value.trim();
+  //   if (query === "") {
+  //     setFilteredEmployees(employees);
+  //   } else {
+  //     const filtered = employees.filter((employee) =>
+  //       employee.id.toString().includes(query)
+  //     );
+  //     setFilteredEmployees(filtered);
+  //   }
+  // };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -43,14 +43,19 @@ const AddEmployee = ({ employees, setFilteredEmployees, onAdd }) => {
     }
   };
 
+  const handleSearchInputChange = (e) => {
+    const query = e.target.value;
+    onSearch(query);
+  };
+
   return (
     <div className="add-employee">
       <div className="header-bar">
         <input
           type="text"
           className="search-bar"
-          placeholder="Search employees..."
-          onChange={handleSearch}
+          placeholder="Search employees by name..."
+          onChange={handleSearchInputChange}
         />
         <button className="add-employee-btn" onClick={() => setIsModalOpen(true)}>
           + Add Employee
