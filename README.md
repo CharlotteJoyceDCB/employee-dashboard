@@ -3,6 +3,7 @@ This project is a React-based Employee Management Dashboard that enables users t
 
 - View the total number of employees, departments, and positions dynamically.
 - Add new employees using the Add Employee component.
+- Edit and delete employee details.
 - Search employees using a search bar.
 - Display employee details dynamically.
 
