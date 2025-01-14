@@ -3,6 +3,8 @@ import EmployeeList from './components/EmployeeList';
 import AddEmployee from './components/AddEmployee';
 import EditEmployee from './components/Editemployee';
 import DashboardSummary from "./components/DashboardSummary";
+import Sidebar from "./components/Sidebar";
+import "./styles/App.css";
 
 const App = () => {
   const [employees, setEmployees] = useState([
@@ -80,27 +82,29 @@ const App = () => {
   };
 
   return (
-    <div className="app">
-      <DashboardSummary employees={employees} />
-
-      <AddEmployee
-        onAdd={handleAddEmployee}
-        onSearch={handleSearch}
-      />
-
-      {editingEmployee ? (
-        <EditEmployee
-          employee={editingEmployee}
-          onUpdate={handleUpdateEmployee}
-          onCancel={handleCancelEdit}
+    <div className="app-layout">
+      <Sidebar />
+      <div className="main-content">
+        <DashboardSummary employees={employees} />
+        <AddEmployee
+          onAdd={handleAddEmployee}
+          onSearch={handleSearch}
         />
-      ) : null}
 
-      <EmployeeList
-        employees={filteredEmployees}
-        onEdit={handleEditEmployee}
-        onDelete={handleDeleteEmployee}
-      />
+        {editingEmployee ? (
+          <EditEmployee
+            employee={editingEmployee}
+            onUpdate={handleUpdateEmployee}
+            onCancel={handleCancelEdit}
+          />
+        ) : null}
+
+        <EmployeeList
+          employees={filteredEmployees}
+          onEdit={handleEditEmployee}
+          onDelete={handleDeleteEmployee}
+        />
+      </div>
     </div>
   );
 };

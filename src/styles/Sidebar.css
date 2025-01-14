@@ -1,0 +1,60 @@
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-right: 1px solid #dee2e6;
+    display: flex;
+    flex-direction: column;
+} 
+.profile-section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+} 
+.profile-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+} 
+.profile-details h4 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: bold;
+} 
+.profile-details p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #6c757d;
+} 
+.menu-section {
+    margin-top: 5px;
+} 
+.menu-section h5 {
+    margin-bottom: 10px;
+    font-size: 1rem;
+    color: #495057;
+    text-transform: uppercase;
+} 
+.menu-section ul {
+    list-style: none;
+    padding: 0;
+} 
+.menu-section li {
+    display: flex;
+    align-items: center;
+    padding: 10px 5px;
+    font-size: 0.9rem;
+    color: #343a40;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}  
+.menu-section li svg {
+    margin-right: 10px;
+    color: #6c757d;
+}  
+.menu-section li:hover {
+    background-color: #e9ecef;
+    border-radius: 5px;
+}  
